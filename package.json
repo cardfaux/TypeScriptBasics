@@ -1,0 +1,22 @@
+{
+	"name": "typescriptbasics",
+	"version": "1.0.0",
+	"description": "",
+	"main": "App.js",
+	"scripts": {
+		"start": "lite-server"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cardfaux/TypeScriptBasics.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/cardfaux/TypeScriptBasics/issues"
+	},
+	"homepage": "https://github.com/cardfaux/TypeScriptBasics#readme",
+	"devDependencies": {
+		"lite-server": "^2.5.4"
+	}
+}
