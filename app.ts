@@ -1,53 +1,37 @@
-// These Are Given To The Properties By The Developer
-// const person: {
-// 	name: string;
-// 	age: number;
-// 	hobbies: Array<string>;
-// 	role: Array<number | string>;
-// } = {
-// 	name: 'james',
-// 	age: 32,
-// 	hobbies: ['Sports', 'Cooking'],
-// 	role: [2, 'author']
-// };
-
-// These Types Are Infered By TypeScript
-const person: {
-	name: string; // String
-	age: number; // Number
-	hobbies: string[]; // An Array Of Strings
-	role: [number, string]; // Tuple Type An Array Of Two Elements one Number one String
-} = {
-	name: 'james',
-	age: 32,
-	hobbies: ['Sports', 'Cooking'],
-	role: [2, 'author'] // Here TypeScript Knows it is An Array With 2 Items String Or Number
-};
-
-// Global Variables Basically Human Readable Mapped Values
-enum Role {
-	ADMIN,
-	READ_ONLY,
-	AUTHOR
-} // Behind The Scenes it is numbered 0 1 2 Can Assign Different Values If You Want
-
-const person2 = {
-	name: 'james',
-	age: 32,
-	hobbies: ['Sports', 'Cooking'],
-	role: Role.ADMIN
-};
-
-const dog = {
-	name: 'bear',
-	age: 4
-};
-
-let favoriteActivities: string[]; // An Array Of Strings
-//favoriteActivities = 'sports' gives an error
-
-console.log(person.name);
-
-for (const hobby of person.hobbies) {
-	console.log(hobby.toUpperCase);
+function add(n1: number, n2: number) {
+	const result = n1 + n2;
+	return result;
 }
+
+// Runtime Type Check With Union Types
+function combine(
+	input1: number | string,
+	input2: number | string,
+	resultConversion: string
+) {
+	let result: any;
+	if (
+		(typeof input1 === 'number' && typeof input2 === 'number') ||
+		resultConversion === 'as-number'
+	) {
+		result = +input1 + +input2;
+	} else {
+		result = input1.toString();
+		+input2.toString();
+	}
+	// if (resultConversion === 'as-number') {
+	// 	return parseFloat(result);
+	// } else {
+	// 	return result.toString();
+	// }
+	return result;
+}
+
+const combineAges = combine(30, 26, 'as-number');
+console.log(combineAges);
+
+const combineStringages = combine('30', '26', 'as-number');
+console.log(combineStringages);
+
+const combineNames = combine('Max', 'Anna', 'as-text');
+console.log(combineNames);

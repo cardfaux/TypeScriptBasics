@@ -17,3 +17,5 @@
 # Enum enum {NEW, OLD} enumerated global constant identifiers
 
 # Any \* Any Kind Of Value
+
+# Union Type string | number union Type is one type or the other
