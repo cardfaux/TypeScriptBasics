@@ -19,3 +19,11 @@
 # Any \* Any Kind Of Value
 
 # Union Type string | number union Type is one type or the other
+
+# Function Types  combineValues: (a: number, b: number) => number;
+
+# Unknown Type Similar to any but a little more strict
+
+# Never is another type functions can return
+
+# tsc --init in the root direcrory of the project will produce a tsconfig.json
