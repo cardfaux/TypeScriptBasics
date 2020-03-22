@@ -75,6 +75,8 @@
 		"**/*.dev.ts" /* any file with .dev.ts in any folder */,
 		"node_modules" /*  will exclude node_modules*/
 	],
-	"include": ["src/app.ts" /* will only compile app.ts */],
-	"files": ["src/app.ts" /* same as include just cant specify whole folders */]
+	"include": ["src/**/*"]
+	// "files": [
+	// 	"src/unknown-any.ts" /* same as include just cant specify whole folders */
+	// ]
 }

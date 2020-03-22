@@ -2,11 +2,11 @@
 
 ## Core Data Types
 
-# number 1, 5.3, -10
+# number 1, 5.3, -10 Floating Point Numbers
 
 # string 'hi', "Hi", `hi`
 
-# boolean true or false
+# boolean true or false not Truthy or Falsy
 
 # object {age: 32} more specific versions in typescript
 
@@ -20,10 +20,12 @@
 
 # Union Type string | number union Type is one type or the other
 
-# Function Types  combineValues: (a: number, b: number) => number;
+# Function Types combineValues: (a: number, b: number) => number;
 
 # Unknown Type Similar to any but a little more strict
 
 # Never is another type functions can return
 
 # tsc --init in the root direcrory of the project will produce a tsconfig.json
+
+# Object Types Are Key -> Type Pairs Not Key -> Value Pairs

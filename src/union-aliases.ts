@@ -13,7 +13,7 @@ function combine(
 	input2: Combinable,
 	resultConversion: ConversionDescription // Union Literal Type
 ) {
-	let result: any;
+	let result: number | string;
 	if (
 		(typeof input1 === 'number' && typeof input2 === 'number') ||
 		resultConversion === 'as-number'
