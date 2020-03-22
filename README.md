@@ -29,3 +29,5 @@
 # tsc --init in the root direcrory of the project will produce a tsconfig.json
 
 # Object Types Are Key -> Type Pairs Not Key -> Value Pairs
+
+# Interface Makes A Custom Type

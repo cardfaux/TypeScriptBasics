@@ -1,42 +1,54 @@
-// Next GEN ES-6
-const name2: 'Adam' = 'Adam';
-let lastName: string = 'Hagood';
+// Interfaces
+// Not A BluePrint For A Object More Like A Custom Type
+// Interfaces can only be described to define the structure of an object
+// Can't Have Values Inside An Interface
 
-console.log(name2 + lastName);
+interface Named {
+	readonly nickName: string;
+}
+interface Person {
+	readonly name: string;
+	readonly age: number;
 
-const add5 = (a: number, b: number) => a + b;
-
-const printAdd: (a: number | string) => void = (output: string | number) => {
-	console.log(output);
-};
-
-printAdd(add5(5, 2));
-
-const button: HTMLButtonElement | null = document.querySelector('button');
-
-// To Avoid The Possible Null Error Put It In A Run Time If Check
-// If The StrictNullChecks Is Set To True in TSConfig.TS
-if (button) {
-	button.addEventListener('click', (event: MouseEvent) => console.log(event));
+	greet(phrase: string): void;
 }
 
-const hobbies = ['sporst', 'cooking'];
-const moreHobbies = ['hiking'];
-
-moreHobbies.push(...hobbies);
-
-const person8 = {
+// Can Use The Interface To Type Check An Object Now Person Is The Type;
+let user1: Person;
+user1 = {
 	name: 'Adam',
-	age: 31
+	age: 31,
+	greet(phrase: string) {
+		console.log(phrase + ' ' + this.name);
+	}
 };
 
-const copiedPerson = { ...person8 };
+// You See More Interfacs Than Types
 
-const addMe = (...numbers: number[]) => {
-	return numbers.reduce((currentResult, currentValue) => {
-		return currentResult + currentValue;
-	}, 0);
-};
+interface Greetable extends Named {
+	name: string;
 
-const addedNumbers = addMe(5, 10, 7, 5, 2);
-console.log(addedNumbers);
+	greet(phrase: string): void;
+}
+
+let user2: Greetable;
+// Can not Assign To A ReadOnly Propertry
+//user1.name = 'Adam'
+
+class PersonMe implements Greetable {
+	nickName: string;
+	name: string;
+	age: number = 31;
+
+	constructor(n: string, nickName: string) {
+		this.name = n;
+		this.nickName = nickName;
+	}
+	greet(phrase: string) {
+		console.log(phrase + ' ' + this.name);
+	}
+}
+
+user2 = new PersonMe('Adam', 'Hagood');
+user2.greet('Hi There I Am');
+console.log(user2);
